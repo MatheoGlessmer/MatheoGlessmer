@@ -1,16 +1,14 @@
-## Hi there 👋
+# Mathéo Glessmer
+Élève-ingénieur à l'ENSIIE (filière HPC, Évry). Je cherche un stage de
+3 à 4 mois en cyber-sécurité, maintient d'infrastructure, HPC.
 
-<!--
-**MatheoGlessmer/MatheoGlessmer** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+## Projets
+- **hp-allocator** : allocateur mémoire en C sur huge pages, avec benchmark TLB/cache
+- **ensiie_tp** : étude du code de l'ordonnanceur Linux 4.9.30
+- **tipe-economie** : modèle de flux monétaires simplifié en C
 
-Here are some ideas to get you started:
+## En cours
+Deveuloppement d'un luncher custom Android pour la challenge entreprendre
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Contact
+[matheo.glessmer@proton.me] · 
