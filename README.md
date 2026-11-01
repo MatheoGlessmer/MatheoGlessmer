@@ -13,7 +13,6 @@ J'ai choisi la filière HPC pour sa proximité avec le matériel, l'architecture
 - **Mémoire** : allocateur en espace utilisateur (blocs, liste de blocs libres, huge pages), pagination, TLB et caches.
 - **Noyau & OS** : étude du code de l'ordonnanceur Linux 4.9 (verrou de la run queue, préemption, changement de contexte en assembleur x86-64).
 - **Calcul scientifique & optimisation** : mesure de performances, optimisation mémoire et cache, BLAS niveau 3, LAPACK.
-- **Sécurité** : `[à compléter honnêtement : challenges Root-Me / pwn.college réalisés, write-ups ; sinon écrire « je me forme à l'exploitation de binaires » et rien de plus]`
 
 ---
 
