@@ -20,12 +20,17 @@ J'ai choisi la filière HPC pour sa proximité avec le matériel, l'architecture
 
 * **[ipsdev — densité nucléaire](https://github.com/MatheoGlessmer/ipsdev)** *(projet d'équipe, 3 personnes)*
   Modélisation en C++ de la densité nucléaire locale sur base d'oscillateur harmonique cylindrique (polynômes d'Hermite et de Laguerre, base tronquée), avec Armadillo et tests CxxTest. Comparaison de plusieurs algorithmes de calcul, du naïf aux produits matriciels par blocs (BLAS niveau 3) : jusqu'à **×160** sur une grille 100×100, avec des écarts de l'ordre de 10⁻¹⁵ par rapport à la référence. Wrapper Python pour la visualisation.
-  Ma part : `[précise : troncature de la base, Makefile, wrapper, algorithmes...]`
+
+  Ma part : 
+    1. Makefile
+    2. Test des fonctions polynome
+    3. Wrapper Python
+    4. Algorithme et optimisation
 
 * **[hp-allocator — allocateur mémoire sur huge pages](https://github.com/MatheoGlessmer/hp-allocator)**
   Allocateur en C en espace utilisateur sur une zone de huge pages (2 Mo) : en-têtes de blocs, liste chaînée de blocs libres, alignement. Mesure de l'impact des huge pages avec le benchmark du TD : temps de lecture stable (≈ 0,02 s) au-delà d'environ 1,4 million de doubles, contre une hausse jusqu'à ≈ 0,035 s avec des pages standards (défauts de TLB). Limites documentées : pas de fusion des blocs libres, bibliothèque dynamique non terminée.
 
-* **[TIPE — simulation de flux monétaires en C](https://github.com/MatheoGlessmer/tipe-economie)** `[vérifie que ce nom de dépôt est le bon]`
+* **[TIPE — simulation de flux monétaires en C](https://github.com/MatheoGlessmer/tipe-economie)** 
   Simulateur de dynamiques de marchés discrets (TIPE 2026, candidat libre) : arithmétique en virgule fixe (10⁻⁶), pointeurs de fonctions, sérialisation de marchés, suite de tests unitaires, calcul du jacobien et outil d'analyse de ses valeurs propres avec LAPACK pour étudier la stabilité locale. Exploitation des résultats en cours.
 
 * **[Étude de l'ordonnanceur Linux 4.9](https://github.com/MatheoGlessmer/ensiie_tp/tree/main/ordonnanceur_linux)**
