@@ -1,46 +1,48 @@
 # Mathéo Glessmer
-**Élève-ingénieur à l'ENSIIE** (Évry) · Spécialisation HPC, Systèmes & Bas Niveau  
-En recherche d'un **stage de 3 à 4 mois** en **Cybersécurité offensive** (Exploitation binaire / Sécurité système) ou **Ingénierie Bas Niveau & HPC**.
+
+**Élève-ingénieur à l'ENSIIE** (Évry) · Filière Calcul haute performance (HPC) · Systèmes & bas niveau
+
+À la recherche d'un **stage de 3 à 4 mois** à partir de mai, en Île-de-France, en **sécurité des systèmes et du logiciel** (sécurité offensive, reverse engineering, noyau et cloud) ou en **HPC / calcul scientifique**.
 
 ---
 
 ### À propos
 
-Étudiant en filière Calcul Haute Performance à l'ENSIIE, j'ai choisi cette formation pour sa proximité avec le matériel, l'architecture des processeurs et le fonctionnement interne du noyau Linux.
+J'ai choisi la filière HPC pour sa proximité avec le matériel, l'architecture des processeurs et le fonctionnement interne du noyau Linux. J'oriente mes compétences en **C, C++ et systèmes d'exploitation** vers la **sécurité des systèmes**, où comprendre ce qui se passe sous le capot est essentiel :
 
-J'oriente aujourd'hui mes compétences en **C, C++, assembleur x86-64 et systèmes d'exploitation** vers la **cybersécurité offensive** :
-- **Exploitation binaire & mémoire** : compréhension des corruptions de mémoire (pile/tas), des mécanismes d'allocation et du contournement des protections système.
-- **Sécurité noyau & OS** : étude approfondie de l'ordonnanceur Linux 4.9 (gestion des verrous, routines de changement de contexte x86-64, préemption).
-- **Calcul scientifique & Optimisation** : analyse vectorielle, mémoïsation TLB/cache et utilisation de routines BLAS/LAPACK.
+- **Mémoire** : allocateur en espace utilisateur (blocs, liste de blocs libres, huge pages), pagination, TLB et caches.
+- **Noyau & OS** : étude du code de l'ordonnanceur Linux 4.9 (verrou de la run queue, préemption, changement de contexte en assembleur x86-64).
+- **Calcul scientifique & optimisation** : mesure de performances, optimisation mémoire et cache, BLAS niveau 3, LAPACK.
+- **Sécurité** : `[à compléter honnêtement : challenges Root-Me / pwn.college réalisés, write-ups ; sinon écrire « je me forme à l'exploitation de binaires » et rien de plus]`
 
 ---
 
-### Projets phares
+### Projets
 
-* **[ipsdev — Simulation & Optimisation de Densité Nucléaire](https://github.com/MatheoGlessmer/ipsdev)**  
-  Modélisation en C++ de densité nucléaire sur base d'oscillateur harmonique cylindrique. Travail d'accélération matérielle et algorithmique (optimisation de cache/TLB, factorisation de Cholesky, algèbre linéaire BLAS 3 / DGEMM) permettant d'atteindre un gain de performance de **×160** par rapport à l'implémentation naïve. Interface et wrapper natif Python.
+* **[ipsdev — densité nucléaire](https://github.com/MatheoGlessmer/ipsdev)** *(projet d'équipe, 3 personnes)*
+  Modélisation en C++ de la densité nucléaire locale sur base d'oscillateur harmonique cylindrique (polynômes d'Hermite et de Laguerre, base tronquée), avec Armadillo et tests CxxTest. Comparaison de plusieurs algorithmes de calcul, du naïf aux produits matriciels par blocs (BLAS niveau 3) : jusqu'à **×160** sur une grille 100×100, avec des écarts de l'ordre de 10⁻¹⁵ par rapport à la référence. Wrapper Python pour la visualisation.
+  Ma part : `[précise : troncature de la base, Makefile, wrapper, algorithmes...]`
 
-* **[hp-allocator — Allocateur mémoire Huge Pages](https://github.com/MatheoGlessmer/hp-allocator)**  
-  Conception en C d'un allocateur mémoire en espace utilisateur réservant des Huge Pages (2 Mo). Mise en place d'un benchmark mesurant le gain de performance et la réduction des défauts de TLB face à un allocateur classique sous forte charge.
+* **[hp-allocator — allocateur mémoire sur huge pages](https://github.com/MatheoGlessmer/hp-allocator)**
+  Allocateur en C en espace utilisateur sur une zone de huge pages (2 Mo) : en-têtes de blocs, liste chaînée de blocs libres, alignement. Mesure de l'impact des huge pages avec le benchmark du TD : temps de lecture stable (≈ 0,02 s) au-delà d'environ 1,4 million de doubles, contre une hausse jusqu'à ≈ 0,035 s avec des pages standards (défauts de TLB). Limites documentées : pas de fusion des blocs libres, bibliothèque dynamique non terminée.
 
-* **[tipe-economie — Simulation de flux discrets en C](https://github.com/MatheoGlessmer/tipe-economie)**  
-  Simulateur de dynamiques de marchés discrets écrit en C. Calcul en virgule fixe ($10^{-6}$), modularité via pointeurs de fonctions, sérialisation personnalisée, calcul de jacobien et analyse de stabilité spectrale avec LAPACK.
+* **[TIPE — simulation de flux monétaires en C](https://github.com/MatheoGlessmer/tipe-economie)** `[vérifie que ce nom de dépôt est le bon]`
+  Simulateur de dynamiques de marchés discrets (TIPE 2026, candidat libre) : arithmétique en virgule fixe (10⁻⁶), pointeurs de fonctions, sérialisation de marchés, suite de tests unitaires, calcul du jacobien et outil d'analyse de ses valeurs propres avec LAPACK pour étudier la stabilité locale. Exploitation des résultats en cours.
 
-* **[linux-sched-study — Analyse du noyau Linux 4.9](https://github.com/MatheoGlessmer/ensiie_tp)**  
-  Étude technique du code source de l'ordonnanceur (`kernel/sched/`) : analyse de l'appel système `sched_yield`, synchronisation par verrous de runqueue, bascule de contexte en assembleur x86-64 et gestion de l'arbre rouge-noir dans l'ordonnanceur CFS.
+* **[Étude de l'ordonnanceur Linux 4.9](https://github.com/MatheoGlessmer/ensiie_tp/tree/main/ordonnanceur_linux)**
+  Étude du code de `kernel/sched/` en lecture seule : chemin de `sched_yield` jusqu'à `context_switch`, verrou de la run queue, changement de contexte x86-64, CFS (arbre rouge-noir). Rapport PDF.
 
 ---
 
 ### Compétences techniques
 
-* **Langages :** C (C99/C11), C++ (C++17), Assembleur x86-64, Python, Bash
-* **Systèmes & Bas niveau :** GNU/Linux, structures internes du noyau, pagination mémoire (TLB, Huge Pages)
-* **Outils & Profiling :** Make, GDB, Perf, Valgrind, Doxygen, Git
-* **Mathématiques & Calcul :** Algèbre linéaire, Armadillo, BLAS, LAPACK
+* **Langages :** C, C++, assembleur (RISC-V ; lecture de x86-64) Python, Bash 
+* **Systèmes & bas niveau :** GNU/Linux, structures internes du noyau, pagination mémoire (TLB, huge pages)
+* **Outils :** Make, Git, Valgrind, perf, AddressSanitizer, Doxygen, CxxTest 
+* **Calcul :** algèbre linéaire, Armadillo, BLAS, LAPACK
 
 ---
 
 ### Contact
 
-- **Email :** [matheo.glessmer@proton.me](mailto:matheo.glessmer@proton.me)
-- **LinkedIn :** [pas encore disponible](https://www.linkedin.com)
+- **E-mail :** [matheo.glessmer@proton.me](mailto:matheo.glessmer@proton.me)
